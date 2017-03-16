@@ -1,12 +1,11 @@
 function supports_history_api() {
-  // TODO: Use modernizr instead
-  return !!(window.history && history.pushState);
+  return Modernizr.history;
 }
 
 function swapPhoto(href) {
   var req = new XMLHttpRequest();
   req.open("GET",
-           "http://localhost:8000/gallery/" +
+           "http://damapin.github.io/X-Nav-5.7.18-HistoryAPI/gallery/" +
              href.split("/").pop(),
            false);
   req.send(null);
